@@ -9,7 +9,7 @@ export type Destinations = {
   guests: {
     adults: number,
     children: number,
-    infant: number,
+    infant?: number,
   },
   departureDate: string,
   holidayLength: string,
