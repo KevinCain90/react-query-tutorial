@@ -8,6 +8,9 @@ export const StyledArticle = styled.article`
 
 export const StyledInnerContainer = styled.div`
   display: flex;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 export const StyledImageContainer = styled.div`
@@ -25,6 +28,9 @@ export const StyledInfoContainer = styled.div`
   box-sizing: border-box;
   width: 300px;
   padding: 20px;
+  @media (max-width: 600px) {
+    width: 100%; 
+  }
 `;
 
 export const StyledH2 = styled.h2`
