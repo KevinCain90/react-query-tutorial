@@ -76,7 +76,6 @@ export const StyledReadMoreDiv = styled.div`
   left: 0;
   width: 200px;
   background-color: #FFF;
-  opacity: 0.9;
   padding: 10px 20px;
   font-size: 14px;
   color: #162B74;
