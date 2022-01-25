@@ -1,0 +1,32 @@
+.button-container {
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #FFF;
+  color: #162B74;
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid #162B74;
+  cursor: pointer;
+}
+
+.button.button-active {
+  background-color: #162B74;
+  color: #FFF;
+}
+
+.button.button-active .button-icon {
+  color: #FFF;
+}
+
+.button-text {
+  font-size: 16px;
+}
+
+.button-icon {
+  color: #D4D4D4;
+  font-size: 18px;
+  margin-right: 8px;
+}

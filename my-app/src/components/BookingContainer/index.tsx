@@ -14,11 +14,11 @@ const BookingContainer: React.FC = () => {
         icon: 'pound'
       },
       {
-        name: 'hotelName',
+        name: 'alphabetically',
         icon: 'alpha'
       },
       {
-        name: 'starRating',
+        name: 'star rating',
         icon: 'star'
       },
     ]
