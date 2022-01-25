@@ -33,3 +33,33 @@ export const StyledH2 = styled.h2`
   color: #162B74;
   margin-bottom: 5px;
 `;
+
+export const StyledH3 = styled.h3`
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  margin-top: 5px;
+`;
+
+export const StyledStarRatingDiv = styled.div<{ $starRating: number }>`
+  margin-bottom: 15px;
+`;
+
+export const StyledInfoP = styled.div`
+  margin-bottom: 10px;
+  font-size: 12px;
+`;
+
+export const StyledBookNowButton = styled.div`
+  background: #FED70D;
+  color: #162B74;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 4px;
+`;
+
+export const StyledPriceSpan = styled.span`
+  font-size: 28px;
+`;
