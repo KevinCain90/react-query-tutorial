@@ -52,7 +52,19 @@ const BookingContainer: React.FC = () => {
 
   const resultCards = destinations.map(destination => {
     return (
-      <ResultCard />
+      <ResultCard
+        key={destination.hotelName}
+        hotelName={destination.hotelName}
+        location={destination.location}
+        hotelImage={destination.hotelImage}
+        starRating={destination.starRating}
+        guests={destination.guests}
+        holidayLength={destination.holidayLength}
+        departureDate={destination.departureDate}
+        departureAirport={destination.departureAirport}
+        price={destination.price}
+        description={destination.description}
+      />
     )
 });
 
