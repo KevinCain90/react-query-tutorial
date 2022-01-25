@@ -1,5 +1,4 @@
 export type ResultCardProps = {
-  key: string;
   hotelName: string;
   location: string;
   hotelImage: string;

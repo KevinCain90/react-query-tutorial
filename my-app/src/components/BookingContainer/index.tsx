@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import ResultCard from '../ResultCard';
 import SortResult from '../SortResult';
 
+import { StyledBookingContainer, StyledAside, StyledMain } from './styles';
+
 import { destinations } from './dataMocks';
 
 const BookingContainer: React.FC = () => {
@@ -41,19 +43,18 @@ const BookingContainer: React.FC = () => {
       currentArray.sort((a, b) => a.starRating < b.starRating ? 1 : -1);
     }
 
-    setDestinations(currentArray as any); // not ideal 
+    setDestinations(currentArray as any); // not ideal TO DO
     setSortingOptions({
       ...sortingOptions,
       currentSelection
     });
   }
 
-  useEffect(() => sortBy('price'), []);
+  useEffect(() => sortBy('price'), []); // TO DO
 
   const resultCards = destinations.map(destination => {
     return (
       <ResultCard
-        key={destination.hotelName}
         hotelName={destination.hotelName}
         location={destination.location}
         hotelImage={destination.hotelImage}
@@ -69,18 +70,18 @@ const BookingContainer: React.FC = () => {
 });
 
   return (
-    <div data-testid="booking-container">
-      <aside>
+    <StyledBookingContainer data-testid="booking-container">
+      <StyledAside>
         <SortResult 
           currentSelection={sortingOptions.currentSelection}
           options={sortingOptions.sortingOptions}
           sortBy={sortBy}
         />
-      </aside>
-      <main>
+      </StyledAside>
+      <StyledMain>
         {resultCards}
-      </main>
-    </div>
+      </StyledMain>
+    </StyledBookingContainer>
   )
 };
 
