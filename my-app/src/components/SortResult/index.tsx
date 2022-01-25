@@ -1,9 +1,8 @@
 import { SortResultProps } from "./types";
 
-import './index.css';
+import { ButtonContainer, ButtonText, ButtonIcon, StyledButton } from "./styles";
 
 import { faSortAlphaDown, faPoundSign, faStar } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const SortResult: React.FC<SortResultProps> = ({
   currentSelection,
@@ -11,23 +10,23 @@ const SortResult: React.FC<SortResultProps> = ({
   sortBy,
 }) => {
   return (
-    <div data-testid="sort-result" className='button-container'>
+    <ButtonContainer data-testid="sort-result">
       {options.map(option => {
-        const buttonClass = option.name === currentSelection ? 'button button-active' : 'button';
+        const isSelected = option.name === currentSelection;
 
         return (
-          <div key={option.name} className={buttonClass} onClick={() => sortBy(option.name)}>
-            <span className='button-text'>
+          <StyledButton $isSelected={isSelected} key={option.name} onClick={() => sortBy(option.name)}>
+            <ButtonText>
               sort 
               {option.name !== 'alphabetically' ? ' by ' : ' '}
               <strong>{option.name}</strong>
-            </span>
+            </ButtonText>
             {' '}
-            <FontAwesomeIcon className='button-icon' icon={option.icon === 'alpha' ? faSortAlphaDown : option.icon === 'star' ? faStar : faPoundSign } />
-          </div>
+            <ButtonIcon $isSelected={isSelected} icon={option.icon === 'alpha' ? faSortAlphaDown : option.icon === 'star' ? faStar : faPoundSign } />
+          </StyledButton>
         )
       })}
-    </div>
+    </ButtonContainer>
   )
 };
 
