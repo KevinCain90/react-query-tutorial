@@ -55,6 +55,7 @@ const BookingContainer: React.FC = () => {
   const resultCards = destinations.map(destination => {
     return (
       <ResultCard
+        key={destination.hotelName}
         hotelName={destination.hotelName}
         location={destination.location}
         hotelImage={destination.hotelImage}
@@ -67,7 +68,7 @@ const BookingContainer: React.FC = () => {
         description={destination.description}
       />
     )
-});
+  });
 
   return (
     <StyledBookingContainer data-testid="booking-container">

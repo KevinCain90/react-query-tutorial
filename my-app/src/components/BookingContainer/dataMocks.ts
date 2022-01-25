@@ -7,7 +7,7 @@ export const destinations: Destinations = [
     price: 1136.50,
     departureAirport: "East Midlands",
     location: "Costa Adeje, Tenerife",
-    hotelImage: "hotel-image-2.png",
+    hotelImage: "thumbnail_hotel-image-2.png",
     starRating: 5,
     guests: {
       adults: 2,
@@ -23,7 +23,7 @@ export const destinations: Destinations = [
     price: 696.80,
     departureAirport: "Liverpool",
     location: "Costa Adeje, Tenerife",
-    hotelImage: "hotel-image-1.png",
+    hotelImage: "thumbnail_hotel-image-1.png",
     starRating: 4,
     guests: {
       adults: 2,
@@ -38,7 +38,7 @@ export const destinations: Destinations = [
     price: 499.99,
     departureAirport: "Manchester",
     location: "Costa Adeje, Tenerife",
-    hotelImage: "hotel-image-1.png",
+    hotelImage: "thumbnail_hotel-image-3.png",
     starRating: 3,
     guests: {
       adults: 2,
