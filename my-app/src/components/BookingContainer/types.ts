@@ -14,3 +14,8 @@ export type Destinations = {
   departureDate: string,
   holidayLength: string,
 }[];
+
+export type SortingOptions = {
+  name: string;
+  icon: string;
+}[];

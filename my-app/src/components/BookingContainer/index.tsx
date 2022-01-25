@@ -5,31 +5,19 @@ import SortResult from '../SortResult';
 
 import { StyledBookingContainer, StyledAside, StyledMain } from './styles';
 
-import { destinations } from './dataMocks';
+import { destinationsArray, sortingOptionsArray } from './dataMocks';
 
 const BookingContainer: React.FC = () => {
   const [sortingOptions, setSortingOptions] = useState({
     currentSelection: 'price',
-    sortingOptions: [
-      {
-        name: 'price',
-        icon: 'pound'
-      },
-      {
-        name: 'alphabetically',
-        icon: 'alpha'
-      },
-      {
-        name: 'star rating',
-        icon: 'star'
-      },
-    ]
+    sortingOptions: sortingOptionsArray,
   });
-  const [destinationsState, setDestinations] = useState([]);
+  const [destinations, setDestinations] = useState(destinationsArray);
   
   // function used to sort and return current selection
   const sortBy = (currentSelection: string) => {
-    let currentArray = destinations.length ? [...destinationsState] : [...destinations];
+
+    let currentArray = destinations.length ? [...destinations] : [...destinationsArray];
 
     if (currentSelection === 'price') {
       currentArray.sort((a, b) => a.price > b.price ? 1 : -1);
@@ -39,18 +27,18 @@ const BookingContainer: React.FC = () => {
       currentArray.sort((a, b) => a.hotelName > b.hotelName ? 1 : -1);
     }
 
-    if (currentSelection === 'rating') {
+    if (currentSelection === 'star rating') {
       currentArray.sort((a, b) => a.starRating < b.starRating ? 1 : -1);
     }
-
-    setDestinations(currentArray as any); // not ideal TO DO
+    
+    setDestinations(currentArray);
     setSortingOptions({
       ...sortingOptions,
       currentSelection
     });
   }
 
-  useEffect(() => sortBy('price'), []); // TO DO
+  useEffect(() => sortBy('price'), []);
 
   const resultCards = destinations.map(destination => {
     return (

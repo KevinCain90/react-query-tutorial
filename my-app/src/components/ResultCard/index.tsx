@@ -41,7 +41,7 @@ const ResultCard: React.FC<ResultCardProps> = ({
   }
 
   const adultText = guests.adults === 1 ? 'Adult, ' : 'Adults, ';
-  const childText = guests.adults === 1 ? 'Adult, ' : 'Adults, ';
+  const childText = guests.children === 1 ? 'Child, ' : 'Children, ';
 
   return (
     <StyledArticle data-testid='result-card'>

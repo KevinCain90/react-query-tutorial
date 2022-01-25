@@ -1,6 +1,6 @@
-import { Destinations } from './types';
+import { Destinations, SortingOptions } from './types';
 
-export const destinations: Destinations = [
+export const destinationsArray: Destinations = [
   {
     hotelName: "Iberostar Grand Salome",
     description: "The Iberostar Grand Salome has an exceptional location in the south of Tenerife, overlooking the Atlantic Ocean. It is situated between the Golf del Sur and the Amarillo Gold courses, and is an ideal hotel for families, couples and groups who are looking for a holiday full of sport, sun and sea.",
@@ -48,3 +48,18 @@ export const destinations: Destinations = [
     holidayLength: "7 days",
   },
 ];
+
+export const sortingOptionsArray: SortingOptions = [
+  {
+    name: 'price',
+    icon: 'pound'
+  },
+  {
+    name: 'alphabetically',
+    icon: 'alpha'
+  },
+  {
+    name: 'star rating',
+    icon: 'star'
+  },
+]
