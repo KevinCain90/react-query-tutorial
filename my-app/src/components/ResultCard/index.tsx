@@ -10,11 +10,15 @@ import {
   StyledInfoContainer,
   StyledH2,
   StyledH3,
+  StyledH4,
   StyledStarRatingDiv,
   StyledInfoP,
   StyledBookNowButton,
   StyledPriceSpan,
   StyledReadMoreDiv,
+  StyledDescriptionP,
+  StyledBottomDiv,
+  StyledBottomContentDiv,
 } from "./styles";
 import { ResultCardProps } from "./types";
 
@@ -76,6 +80,17 @@ const ResultCard: React.FC<ResultCardProps> = ({
           </StyledBookNowButton>
         </StyledInfoContainer>
       </StyledInnerContainer>
+      {isOpen && (
+        <StyledBottomDiv>
+          <StyledBottomContentDiv>
+            <StyledH4>Overview</StyledH4>
+            <StyledDescriptionP>
+              {description}
+            </StyledDescriptionP>
+          </StyledBottomContentDiv>
+          
+        </StyledBottomDiv>
+      )}
     </StyledArticle>
   )
 };

@@ -42,6 +42,11 @@ export const StyledH3 = styled.h3`
   margin-top: 5px;
 `;
 
+export const StyledH4 = styled.h4`
+  margin-bottom: 15px;
+  margin-top: 5px;
+`;
+
 export const StyledStarRatingDiv = styled.div<{ $starRating: number }>`
   margin-bottom: 15px;
 `;
@@ -73,9 +78,27 @@ export const StyledReadMoreDiv = styled.div`
   background-color: #FFF;
   opacity: 0.9;
   padding: 10px 20px;
-  font-size: 12px;
+  font-size: 14px;
   color: #162B74;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+`;
+
+export const StyledDescriptionP = styled.span`
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+`;
+
+export const StyledBottomDiv = styled.div`
+  overflow: hidden;
+  max-height: 500px;
+  transition: max-height 0.3s;
+`;
+
+export const StyledBottomContentDiv = styled.div`
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  color: #162B74;
 `;
