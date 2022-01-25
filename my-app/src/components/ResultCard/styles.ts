@@ -55,6 +55,21 @@ export const StyledH4 = styled.h4`
 
 export const StyledStarRatingDiv = styled.div<{ $starRating: number }>`
   margin-bottom: 15px;
+  &:after {
+    color: #FED70D;
+    ${({ $starRating }) =>
+      $starRating === 3 &&
+      `content: '★★★';`
+    }
+    ${({ $starRating }) =>
+      $starRating === 4 &&
+      `content: '★★★★';`
+    }
+    ${({ $starRating }) =>
+      $starRating === 5 &&
+      `content: '★★★★★';`
+    }
+  }
 `;
 
 export const StyledInfoP = styled.div`

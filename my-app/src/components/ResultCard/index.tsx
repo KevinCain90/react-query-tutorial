@@ -62,7 +62,7 @@ const ResultCard: React.FC<ResultCardProps> = ({
           <StyledH3>
             {location}
           </StyledH3>
-          <StyledStarRatingDiv $starRating={starRating} >star rating here</StyledStarRatingDiv>
+          <StyledStarRatingDiv $starRating={starRating} />
           <StyledInfoP>
             <strong>{guests.adults}</strong> {adultText}
             <strong>{guests.children}</strong> {childText}
