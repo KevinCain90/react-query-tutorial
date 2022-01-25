@@ -32,6 +32,7 @@ export const StyledH2 = styled.h2`
   line-height: 1.2;
   color: #162B74;
   margin-bottom: 5px;
+  margin-top: 0px;
 `;
 
 export const StyledH3 = styled.h3`
@@ -62,4 +63,19 @@ export const StyledBookNowButton = styled.div`
 
 export const StyledPriceSpan = styled.span`
   font-size: 28px;
+`;
+
+export const StyledReadMoreDiv = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  background-color: #FFF;
+  opacity: 0.9;
+  padding: 10px 20px;
+  font-size: 12px;
+  color: #162B74;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
 `;

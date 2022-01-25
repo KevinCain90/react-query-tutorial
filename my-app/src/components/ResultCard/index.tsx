@@ -1,3 +1,7 @@
+import { faChevronDown, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+
 import { 
   StyledArticle, 
   StyledImageContainer,
@@ -10,6 +14,7 @@ import {
   StyledInfoP,
   StyledBookNowButton,
   StyledPriceSpan,
+  StyledReadMoreDiv,
 } from "./styles";
 import { ResultCardProps } from "./types";
 
@@ -25,6 +30,11 @@ const ResultCard: React.FC<ResultCardProps> = ({
   price,
   description,
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  }
 
   const adultText = guests.adults === 1 ? 'Adult, ' : 'Adults, ';
   const childText = guests.adults === 1 ? 'Adult, ' : 'Adults, ';
@@ -34,6 +44,12 @@ const ResultCard: React.FC<ResultCardProps> = ({
       <StyledInnerContainer>
         <StyledImageContainer>
           <StyledImage src={require(`../../../public/images/${hotelImage}`)} alt={hotelName}/>
+          <StyledReadMoreDiv onClick={handleClick}>
+            <span>
+              <strong>{isOpen ? 'Read less' : 'Read more'}</strong> about this hotel 
+            </span>
+            <FontAwesomeIcon icon={isOpen ? faChevronDown : faChevronRight} />
+          </StyledReadMoreDiv>
         </StyledImageContainer>
         <StyledInfoContainer>
           <StyledH2>
@@ -50,6 +66,9 @@ const ResultCard: React.FC<ResultCardProps> = ({
           </StyledInfoP>
           <StyledInfoP>
             <strong>{departureDate}</strong> for <strong>{holidayLength}</strong>
+          </StyledInfoP>
+           <StyledInfoP>
+            Departing from <strong>{departureAirport}</strong>
           </StyledInfoP>
           <StyledBookNowButton>
             Book now <br/>
