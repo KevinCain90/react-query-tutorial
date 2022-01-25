@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-// import { ResultCard } from '../ResultCard';
+import ResultCard from '../ResultCard';
 import SortResult from '../SortResult';
 
 import { destinations } from './dataMocks';
@@ -48,15 +48,26 @@ const BookingContainer: React.FC = () => {
     });
   }
 
-  useEffect(() => sortBy('price'));
+  useEffect(() => sortBy('price'), []);
+
+  const resultCards = destinations.map(destination => {
+    return (
+      <ResultCard />
+    )
+});
 
   return (
     <div data-testid="booking-container">
-     <SortResult 
-       currentSelection={sortingOptions.currentSelection}
-       options={sortingOptions.sortingOptions}
-       sortBy={sortBy}
-     />
+      <aside>
+        <SortResult 
+          currentSelection={sortingOptions.currentSelection}
+          options={sortingOptions.sortingOptions}
+          sortBy={sortBy}
+        />
+      </aside>
+      <main>
+        {resultCards}
+      </main>
     </div>
   )
 };
