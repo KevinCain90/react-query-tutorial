@@ -1,15 +1,32 @@
-// import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 // import { ResultCard } from '../ResultCard';
-// import { SortResult } from '../SortResult';
+import SortResult from '../SortResult';
 
 // import { destinations } from './dataMocks';
-// import styles from './index.modules.css';
 
 const BookingContainer: React.FC = () => {
+  const [sortingOptions, setSortingOptions] = useState({
+    currentSort: 'price',
+    sortingOptions: [
+      {
+        name: 'price',
+        icon: 'pound'
+      },
+      {
+        name: 'hotelName',
+        icon: 'alpha'
+      },
+      {
+        name: 'starRating',
+        icon: 'star'
+      },
+    ]
+  });
+
   return (
     <div data-testid="booking-container">
-     hello world
+     <SortResult />
     </div>
   )
 };
