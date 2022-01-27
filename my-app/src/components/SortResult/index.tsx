@@ -22,7 +22,7 @@ const SortResult: React.FC<SortResultProps> = ({
               <strong>{option.name}</strong>
             </ButtonText>
             {' '}
-            <ButtonIcon $isSelected={isSelected} icon={option.icon === 'alpha' ? faSortAlphaDown : option.icon === 'star' ? faStar : faPoundSign } />
+            <ButtonIcon data-testid='button-icon' $isSelected={isSelected} icon={option.icon === 'alpha' ? faSortAlphaDown : option.icon === 'star' ? faStar : faPoundSign } />
           </StyledButton>
         )
       })}

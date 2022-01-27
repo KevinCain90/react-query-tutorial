@@ -52,7 +52,7 @@ const ResultCard: React.FC<ResultCardProps> = ({
             <span>
               <strong>{isOpen ? 'Read less' : 'Read more'}</strong> about this hotel 
             </span>
-            <FontAwesomeIcon icon={isOpen ? faChevronDown : faChevronRight} />
+            <FontAwesomeIcon icon={isOpen ? faChevronDown : faChevronRight} title="chevron"/>
           </StyledReadMoreDiv>
         </StyledImageContainer>
         <StyledInfoContainer>

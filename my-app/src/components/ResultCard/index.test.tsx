@@ -1,10 +1,10 @@
 import ResultCard from '.';
 
-import { fireEvent, queryByTestId, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 // used to be able to select test id in the document
 import '@testing-library/jest-dom/extend-expect';
 import { ResultCardProps } from './types';
-import { getByTextWithMarkup } from './utils';
+import { getByTextWithMarkup } from '../utils';
 
 const props: ResultCardProps = {
   hotelName: "Iberostar Grand Salome",
@@ -30,6 +30,11 @@ describe('<ResultCard />', () => {
     renderComponent();
     expect(screen.getByTestId('result-card')).toBeInTheDocument();
   });
+  it('displays the click more chevron icon correctly', async () => {
+    renderComponent();
+    const chevronIcon = await screen.findByTitle('chevron');
+    expect(chevronIcon).toBeInTheDocument();
+  });
   it('displays the read more text in overview', async () => {
     renderComponent();
     const readMoreDiv = screen.getByTestId('read-more');
@@ -54,7 +59,7 @@ describe('<ResultCard />', () => {
     const locationText = await screen.findByText('Costa Adeje, Tenerife');
     expect(locationText).toBeInTheDocument();
   });
-  it('displays gust information correctly', async () => {
+  it('displays guest information correctly', async () => {
     const { queryByText } = renderComponent();
     getByTextWithMarkup('2 Adults, 2 Children, & 1 infant', queryByText);
   });
