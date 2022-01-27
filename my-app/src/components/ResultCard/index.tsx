@@ -48,7 +48,7 @@ const ResultCard: React.FC<ResultCardProps> = ({
       <StyledInnerContainer>
         <StyledImageContainer>
           <StyledImage src={require(`../../../public/images/${hotelImage}`)} alt={hotelName}/>
-          <StyledReadMoreDiv onClick={handleClick}>
+          <StyledReadMoreDiv data-testid='read-more' onClick={handleClick}>
             <span>
               <strong>{isOpen ? 'Read less' : 'Read more'}</strong> about this hotel 
             </span>
@@ -76,7 +76,7 @@ const ResultCard: React.FC<ResultCardProps> = ({
           </StyledInfoP>
           <StyledBookNowButton>
             Book now <br/>
-            <StyledPriceSpan>£{price}</StyledPriceSpan>
+            <StyledPriceSpan>£{price.toFixed(2)}</StyledPriceSpan>
           </StyledBookNowButton>
         </StyledInfoContainer>
       </StyledInnerContainer>
