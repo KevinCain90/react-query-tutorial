@@ -4,7 +4,7 @@ import './App.css';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <div className="App" data-testid='app'>
       <BookingContainer />
     </div>
   )

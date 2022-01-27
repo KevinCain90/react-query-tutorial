@@ -15,7 +15,7 @@ const SortResult: React.FC<SortResultProps> = ({
         const isSelected = option.name === currentSelection;
 
         return (
-          <StyledButton $isSelected={isSelected} key={option.name} onClick={() => sortBy(option.name)}>
+          <StyledButton data-testid='sort-by' $isSelected={isSelected} key={option.name} onClick={() => sortBy(option.name)}>
             <ButtonText>
               sort 
               {option.name !== 'alphabetically' ? ' by ' : ' '}

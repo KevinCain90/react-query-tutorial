@@ -47,7 +47,7 @@ const ResultCard: React.FC<ResultCardProps> = ({
     <StyledArticle data-testid='result-card'>
       <StyledInnerContainer>
         <StyledImageContainer>
-          <StyledImage src={require(`../../../public/images/${hotelImage}`)} alt={hotelName}/>
+          <StyledImage data-testid='hotel-image' src={require(`../../../public/images/${hotelImage}`)} alt={hotelName}/>
           <StyledReadMoreDiv data-testid='read-more' onClick={handleClick}>
             <span>
               <strong>{isOpen ? 'Read less' : 'Read more'}</strong> about this hotel 
