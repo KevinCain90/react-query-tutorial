@@ -3,8 +3,11 @@ import axios from 'axios';
 import React from 'react';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
+import Post from './Post';
+
 const fetchPosts =  async () => {
-  const {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')
+  const {data} = await axios.get('https://jsonplaceholder.typicode.com/posts');
+  return data;
 }
 
 const Posts = () => {
@@ -19,8 +22,9 @@ const Posts = () => {
   }
 
   return (
-    <div>
+    <div className='container'>
       <h1>Posts</h1>
+      <Post />
       {
         data.map((post, index) => {
           return <li key={index}>{post.title}</li>

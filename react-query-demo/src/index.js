@@ -4,13 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { QueryClient, QueryClientProvider } from 'react-query';
-
 ReactDOM.render(
   <React.StrictMode>
-    <QueryClientProvider client={QueryClient}>
-      <App />
-    </QueryClientProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
